@@ -4,7 +4,11 @@
   {% for feed in feeds %}
     <h3>{{ feed.title }}</h3>
     {% for item in feed.new_articles %}
-      <p><a href="{{ item.link }}">{{ item.title }}</a></p>
+      <p>
+        <a href="{{ item.link }}">{{ item.title }}</a>
+        <br />
+        {{ item.published_date|date:"d M Y" }}
+      </p>
     {% endfor %}
   {% endfor %}
 {% endblock %}

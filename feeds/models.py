@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 import feedparser
 
 
@@ -10,4 +11,10 @@ class Feed(models.Model):
         return self.title
 
     def new_articles(self):
-        return feedparser.parse(self.link).entries
+        entries = feedparser.parse(self.link).entries
+        for entry in entries:
+            timestamp = datetime(*entry.published_parsed[0:6])
+            entry.published_date = timestamp
+        sorted_entries = sorted(
+            entries, key=lambda k: k.published_date, reverse=True)
+        return sorted_entries
