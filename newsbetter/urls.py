@@ -20,5 +20,5 @@ from feeds import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.feed_list)
+    path('', views.home)
 ]

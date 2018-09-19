@@ -4,9 +4,9 @@
 __pycache__/
 local_settings.py
 db.sqlite3
-media
-static
-venv
-planning
-
-# newsbetter/staticfiles/
+db.json
+/media
+/static
+/venv
+/planning
+original_template/
