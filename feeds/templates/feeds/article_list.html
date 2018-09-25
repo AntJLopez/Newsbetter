@@ -1,0 +1,15 @@
+{% extends 'newsbetter/base.html' %}
+
+{% block content %}
+  {% include 'newsbetter/titlebar.html' %}
+
+  {% for article in articles %}
+    <p>
+      <a href="{{ article.link }}">{{ article.title }}</a>
+      <br />
+      {{ article.feed.title }}
+      <br />
+      {{ article.published|date:"d M Y" }}
+    </p>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,36 @@
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'feed_list' %}">
+          <i class="fal fa-rss-square fa-fw"></i>
+          {% if section == 'Feeds' %}
+            <span class="sr-only">(current)</span>
+          {% endif %}
+          Feeds
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'article_list' %}">
+          <i class="fal fa-newspaper fa-fw"></i>
+          {% if section == 'Articles' %}
+            <span class="sr-only">(current)</span>
+          {% endif %}
+          Articles
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fal fa-envelope fa-fw"></i>
+          Newsletters
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fal fa-users-class fa-fw"></i>
+          Subscribers
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

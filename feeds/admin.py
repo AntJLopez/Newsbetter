@@ -1,8 +1,13 @@
 from django.contrib import admin
 
-from .models import Feed
+from .models import Feed, Article
 
 
 @admin.register(Feed)
-class PostAdmin(admin.ModelAdmin):
+class FeedAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ['title', 'feed', 'published']

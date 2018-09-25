@@ -1,6 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'newsbetter/base.html' %}
 
 {% block content %}
+  {% include 'newsbetter/titlebar.html' %}
+
   {% for feed in feeds %}
     <h3>{{ feed.title }}</h3>
     {% for item in feed.new_articles %}
