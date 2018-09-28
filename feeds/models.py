@@ -3,11 +3,13 @@ from datetime import datetime
 import feedparser
 import dateparser
 import requests
+from analysis.models import Company, Section, Segment
 
 
 class Feed(models.Model):
     title = models.CharField(max_length=100)
     link = models.URLField()
+    companies = models.ManyToManyField(Company, related_name='feeds')
 
     def __str__(self):
         return self.title
@@ -45,6 +47,11 @@ class Article(models.Model):
     link = models.URLField()
     html = models.TextField()
     feed = models.ForeignKey(Feed, null=True, on_delete=models.SET_NULL)
+    companies = models.ManyToManyField(Company, related_name='articles')
+    section = models.ForeignKey(
+        Section, null=True, related_name='articles',
+        on_delete=models.SET_NULL)
+    segments = models.ManyToManyField(Segment, related_name='articles')
 
     __original_link = None
 
@@ -53,6 +60,7 @@ class Article(models.Model):
 
     def __init__(self, *args, **kwargs):
         super(Article, self).__init__(*args, **kwargs)
+        # self.companies.add(self.feed.companies)
         self.__original_link = self.link
 
     def save(self):

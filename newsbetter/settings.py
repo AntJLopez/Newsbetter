@@ -10,6 +10,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Application definition
 
 INSTALLED_APPS = [
+    # Local Apps
+    'feeds.apps.FeedsConfig',
+    'newsletter.apps.NewsletterConfig',
+    'analysis.apps.AnalysisConfig',
+
     # Third Party Apps
     'sass_processor',
 
@@ -20,7 +25,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'feeds.apps.FeedsConfig',
 ]
 
 MIDDLEWARE = [
