@@ -9,4 +9,5 @@ db.json
 /static
 /venv
 /planning
+/node_modules
 original_template/

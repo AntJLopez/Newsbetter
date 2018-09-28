@@ -44,7 +44,7 @@ class Article(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField()
     published = models.DateTimeField(db_index=True)
-    link = models.URLField()
+    link = models.URLField(max_length=500)
     html = models.TextField()
     feed = models.ForeignKey(Feed, null=True, on_delete=models.SET_NULL)
     companies = models.ManyToManyField(Company, related_name='articles')

@@ -2,7 +2,7 @@
   <div class="sidebar-sticky">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" href="{% url 'feed_list' %}">
+        <a class="nav-link {% if section == 'Feeds' %}active{% endif %}" href="{% url 'feed_list' %}">
           <i class="fal fa-rss-square fa-fw"></i>
           {% if section == 'Feeds' %}
             <span class="sr-only">(current)</span>
@@ -11,7 +11,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'article_list' %}">
+        <a class="nav-link {% if section == 'Articles' %}active{% endif %}" href="{% url 'article_list' %}">
           <i class="fal fa-newspaper fa-fw"></i>
           {% if section == 'Articles' %}
             <span class="sr-only">(current)</span>

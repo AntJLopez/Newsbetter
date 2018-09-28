@@ -1,15 +1,33 @@
 {% extends 'newsbetter/base.html' %}
 
 {% block content %}
-  {% include 'newsbetter/titlebar.html' %}
-
-  {% for article in articles %}
-    <p>
-      <a href="{{ article.link }}">{{ article.title }}</a>
-      <br />
-      {{ article.feed.title }}
-      <br />
-      {{ article.published|date:"d M Y" }}
-    </p>
-  {% endfor %}
+{% include 'newsbetter/titlebar.html' %}
+<table border="0" cellpadding="5" cellspacing="5">
+  <tbody>
+    <tr>
+      <td>Article Search:</td>
+      <td><input id="article_search" name=article_search type="text"></td>
+    </tr>
+  </tbody>
+</table>
+<table class="display" id="article_list" style="width:100%">
+  <thead>
+    <tr>
+      <th>Mark</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Feed</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for article in articles %}
+      <tr>
+        <td></td>
+        <td><a href="{{ article.link }}">{{ article.title }}</a></td>
+        <td>{{ article.published|date:"d M Y" }}</td>
+        <td>{{ article.feed.title }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
