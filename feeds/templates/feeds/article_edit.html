@@ -1,0 +1,14 @@
+{% extends 'newsbetter/base.html' %}
+
+{% block content %}
+{% include 'newsbetter/titlebar.html' with title='Edit Article' %}
+
+<form action="{% url 'article_edit' article_id=article.id %}" method="post">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+  <button type="button submit" class="btn btn-primary">Update Article</button>
+</form>
+
+{% endblock %}

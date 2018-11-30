@@ -1,0 +1,98 @@
+.purple {
+  background-color: purple;
+}
+
+.row {
+  font-family: Calibri;
+}
+
+.row .logo-section {
+  padding-top: 16px;
+}
+
+.row .logo-container {
+  background-color: black;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  box-shadow: 0px 0px 5px #333, inset 0px 0px 2px #333;
+}
+
+.row .logo-container th {
+  padding-bottom: 2px;
+}
+
+.row .logo-container center {
+  min-width: 100px;
+}
+
+.row .logo-container .title {
+  color: white;
+  font-weight: bold;
+  font-size: small;
+  padding-bottom: 8px;
+}
+
+.row .header-section .title {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.row .header {
+  padding-top: 8px;
+}
+
+.border-top {
+  border-top: 2px solid black;
+}
+
+.border-bottom {
+  border-bottom: 2px solid black;
+}
+
+.border-bottom-light {
+  border-bottom: 1px solid gray;
+}
+
+.row .big-header {
+  font-size: large;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 8px;
+}
+
+.row .highlights-header {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.row .section-header {
+  background-image: linear-gradient(to left, #1ec8d2, #00e696, #00e696);
+  background-color: #00e696;
+  color: white;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.row .article-title {
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+
+.row.footer {
+  border-top: 2px solid black;
+}
+
+.row.footer a {
+  font-size: small;
+}
+
+.company-list {
+  font-weight: bold;
+}
+
+.row th a {
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
+}

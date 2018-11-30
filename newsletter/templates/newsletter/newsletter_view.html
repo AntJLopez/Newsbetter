@@ -1,0 +1,16 @@
+{% extends 'newsbetter/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+{% include 'newsbetter/titlebar.html' with title=newsletter.title %}
+
+<form action="{% url 'newsletter_send' newsletter.published %}" method='post'>
+  {% csrf_token %}
+  <button type="button submit" class="btn btn-primary">Send Newsletter</button>
+</form>
+
+<iframe src="{% url 'newsletter_mockup' date=newsletter.published %}">
+</iframe>
+
+{% endblock %}

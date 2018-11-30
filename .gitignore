@@ -8,6 +8,5 @@ db.json
 /media
 /static
 /venv
-/planning
 /node_modules
-original_template/
+/newsletter/templates/newsletter/email/newsletter.html

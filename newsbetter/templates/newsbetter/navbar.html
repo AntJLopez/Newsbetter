@@ -1,7 +1,7 @@
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
   <div class="sidebar-sticky">
     <ul class="nav flex-column">
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link {% if section == 'Feeds' %}active{% endif %}" href="{% url 'feed_list' %}">
           <i class="fal fa-rss-square fa-fw"></i>
           {% if section == 'Feeds' %}
@@ -9,7 +9,7 @@
           {% endif %}
           Feeds
         </a>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link {% if section == 'Articles' %}active{% endif %}" href="{% url 'article_list' %}">
           <i class="fal fa-newspaper fa-fw"></i>
@@ -20,17 +20,26 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link {% if section == 'Newsletters' %}active{% endif %}" href="{% url 'newsletter_list' %}">
           <i class="fal fa-envelope fa-fw"></i>
           Newsletters
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link {% if section == 'Database Panel' %}active{% endif %}" href="{% url 'database_panel' %}">
+          <i class="fal fa-database"></i>
+          {% if section == 'Database Panel' %}
+            <span class="sr-only">(current)</span>
+          {% endif %}
+          Database Panel
+        </a>
+      </li>
+      <!-- <li class="nav-item">
         <a class="nav-link" href="#">
           <i class="fal fa-users-class fa-fw"></i>
           Subscribers
         </a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </nav>

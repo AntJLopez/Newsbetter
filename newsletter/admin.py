@@ -1,3 +1,12 @@
 from django.contrib import admin
+from .models import Newsletter, Subscriber
 
-# Register your models here.
+
+@admin.register(Newsletter)
+class FeedAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Subscriber)
+class SubscriberAdmin(admin.ModelAdmin):
+    pass

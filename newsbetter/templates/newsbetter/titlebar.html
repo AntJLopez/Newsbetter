@@ -1,3 +1,13 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">{{ section }}</h1>
+  <h1 class="h2">
+    {% if article %}
+      <a href="{{ article.link }}">
+        {{ article.title }}
+      </a>
+    {% elif title %}
+      {{ title }}
+    {% else %}
+      {{ section }}
+    {% endif %}
+  </h1>
 </div>

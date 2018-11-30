@@ -20,6 +20,8 @@ class Section(models.Model):
 
 class Segment(models.Model):
     def __str__(self):
+        if self.parent:
+            return f'{str(self.parent)} | {self.name}'
         return self.name
 
     name = models.CharField(max_length=50)

@@ -1,0 +1,11 @@
+{% extends 'newsbetter/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+{% include 'newsbetter/titlebar.html' %}
+
+<iframe src="{% url 'admin:index' %}">
+</iframe>
+
+{% endblock %}

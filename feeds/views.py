@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from .models import Feed, Article
+from .forms import ArticleForm
 
 
 def feed_list(request):
@@ -18,3 +20,18 @@ def article_list(request):
         'articles': articles
     }
     return render(request, 'feeds/article_list.html', params)
+
+
+def article_edit(request, article_id):
+    instance = get_object_or_404(Article, pk=article_id)
+    params = {'section': 'Articles', 'article': instance}
+    if request.method == 'POST':
+        form = ArticleForm(request.POST, instance=instance)
+        if form.is_valid():
+            form.save()
+            return render(request, 'feeds/article_edited.html', params)
+    else:
+        form = ArticleForm(instance=instance)
+
+    params['form'] = form
+    return render(request, 'feeds/article_edit.html', params)

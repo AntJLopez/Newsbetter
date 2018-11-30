@@ -25,6 +25,9 @@
     <!-- DataTables CSS -->
     <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
           rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% sass_src 'css/custom.scss' %}" rel="stylesheet">
   </head>
 
   <body>
@@ -76,8 +79,8 @@
     <!-- DataTables JavaScript -->
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js">
     </script>
-    <script src="{% static 'js/data_tables/ColReorderWithResize.js' %}">
-    </script>
+    <!-- <script src="{% static 'js/data_tables/ColReorderWithResize.js' %}">
+    </script> -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js">
     </script>
     <script src="//cdn.datatables.net/plug-ins/1.10.19/sorting/datetime-moment.js">

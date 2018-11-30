@@ -13,7 +13,7 @@
 <table class="display" id="article_list" style="width:100%">
   <thead>
     <tr>
-      <th>Mark</th>
+      <th>In Newsletter</th>
       <th>Title</th>
       <th>Date</th>
       <th>Feed</th>
@@ -22,8 +22,14 @@
   <tbody>
     {% for article in articles %}
       <tr>
-        <td></td>
-        <td><a href="{{ article.link }}">{{ article.title }}</a></td>
+        <td>
+          {% if article.newsletter %}
+            <center>
+              <i class="fal fa-newspaper"></i>
+            </center>
+          {% endif %}
+        </td>
+        <td><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></td>
         <td>{{ article.published|date:"d M Y" }}</td>
         <td>{{ article.feed.title }}</td>
       </tr>
