@@ -26,4 +26,5 @@ class Segment(models.Model):
 
     name = models.CharField(max_length=50)
     parent = models.ForeignKey(
-        'self', null=True, related_name='children', on_delete=models.CASCADE)
+        'self', blank=True, null=True, related_name='children',
+        on_delete=models.CASCADE)

@@ -13,6 +13,8 @@ INSTALLED_APPS = [
 
     # Third Party Apps
     'sass_processor',
+    'django_extensions',
+    'django_inlinecss',
 
     # Django Apps
     'django.contrib.admin',
