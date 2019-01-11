@@ -32,7 +32,7 @@ class Feed(models.Model):
         entries = feedparser.parse(self.link).entries
         for entry in entries:
             a = Article(
-                title=entry.title,
+                title=entry.title[:250],
                 summary=entry.description,
                 published=dateparser.parse(entry.published),
                 link=entry.link,
