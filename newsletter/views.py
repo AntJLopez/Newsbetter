@@ -3,6 +3,7 @@ from django.core.mail import send_mail, EmailMultiAlternatives  # noqa
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 from premailer import transform  # noqa
 from .models import Newsletter, Subscriber
 
