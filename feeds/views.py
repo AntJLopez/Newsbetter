@@ -4,6 +4,7 @@ from .models import Feed, Article
 from .forms import ArticleForm
 
 
+@login_required
 def feed_list(request):
     feeds = Feed.objects.all().order_by('title')
     params = {
@@ -13,6 +14,7 @@ def feed_list(request):
     return render(request, 'feeds/feed_list.html', params)
 
 
+@login_required
 def article_list(request):
     articles = Article.objects.all().order_by('-published')
     params = {
@@ -22,6 +24,7 @@ def article_list(request):
     return render(request, 'feeds/article_list.html', params)
 
 
+@login_required
 def article_edit(request, article_id):
     instance = get_object_or_404(Article, pk=article_id)
     params = {'section': 'Articles', 'article': instance}

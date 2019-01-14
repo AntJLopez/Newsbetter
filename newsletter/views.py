@@ -7,6 +7,7 @@ from premailer import transform  # noqa
 from .models import Newsletter, Subscriber
 
 
+@login_required
 def newsletter_list(request):
     params = {
         'section': 'Newsletters',
@@ -15,6 +16,7 @@ def newsletter_list(request):
     return render(request, 'newsletter/newsletter_list.html', params)
 
 
+@login_required
 def newsletter_view(request, date=None):
     newsletter = get_object_or_404(Newsletter, published=date)
     params = {
@@ -24,6 +26,7 @@ def newsletter_view(request, date=None):
     return render(request, 'newsletter/newsletter_view.html', params)
 
 
+@login_required
 def newsletter_mockup(request, date=None):
     newsletter = get_object_or_404(Newsletter, published=date)
     params = {
@@ -34,6 +37,7 @@ def newsletter_mockup(request, date=None):
 
 
 @require_POST
+@login_required
 def newsletter_send(request, date=None):
     newsletter = get_object_or_404(Newsletter, published=date)  # noqa
     params = {

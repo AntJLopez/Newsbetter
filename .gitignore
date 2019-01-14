@@ -9,6 +9,7 @@ db.json
 /static
 /venv
 /node_modules
+/backups
 /newsletter/templates/newsletter/email/newsletter.html
 /newsbetter/templates/newsbetter/static/css/custom.css
 /newsbetter/templates/newsbetter/static/css/dashboard.css
