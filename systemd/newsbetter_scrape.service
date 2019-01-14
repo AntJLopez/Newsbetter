@@ -1,0 +1,10 @@
+[Unit]
+Description=Scrapes articles from all feeds in Newsbetter application
+
+[Service]
+Type=oneshot
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/newsbetter
+ExecStart=/home/ubuntu/newsbetter/venv/bin/python \
+          manage.py runscript update_articles
