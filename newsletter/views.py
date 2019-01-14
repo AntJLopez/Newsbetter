@@ -47,7 +47,7 @@ def newsletter_send(request, date=None):
     }
 
     subject = 'CI Newsletter'
-    sender = 'antonio@lopez.io'
+    sender = 'ci.team@signify.com'
     html_message = transform(render_to_string(
         'newsletter/email/newsletter.html', params))
     plain_message = strip_tags(html_message)
