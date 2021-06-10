@@ -4,7 +4,7 @@ chardet==3.0.4
 cssselect==1.0.3
 cssutils==1.0.2
 dateparser==0.7.0
-Django==2.1.5
+Django==2.2.24
 django-appconf==1.0.2
 django-compressor==2.2
 django-extensions==2.1.4
